@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html>
+<style>
+   .div img {
+    margin: 0 1em 1em 0em;
+    float: left;
+  }
+  .div div{
+  	margin-left: auto;
+    margin-right: auto;
+  }
+  .clearfix {
+  overflow: auto;
+}
+body{
+font: 16px Arial, sans-serif;
+max-width: 800px;
+}
+</style>
 <body>
-<h4>Tile based jigsaw puzzle:</h4>
-<a href="http://ananddevan.github.io/JigsawPuzzle/"> <img src="assets/images/jigsawPuzzle.jpg" alt="Tiled jigsaw puzzle"></a>
-<hr/>
-<h4>Ball projectile game</h4>
-<a href="http://ananddevan.github.io/DroppingBall/"><img src="assets/images/droppingBall.png" alt="Dropping ball game"></a><br/>
+<h4>Tile based jigsaw puzzle</h4>
+	<div class="div clearfix">
+		<a href="http://ananddevan.github.io/JigsawPuzzle/"> <img src="assets/images/jigsawPuzzle.jpg" alt="Tiled jigsaw puzzle"></a>
+		<p>Play game by rearranging the tiles to form the original image. You can even load your own image to create a custom puzzle.
+		<br/><br/><br>
+		<b>Libraries, technology</b>: <br>
+		+ <em>html5 canvas, audio, javascript</em> <br>
+		+ using html canvas drawImage to create tiles <br>
+		+ radomize tile order to create puzzle <br>
+		+ capture mouse, touch events to drag and place tiles <br>
+		+ add html audio to confirm tile placement <br>
+		+ use html input to load user images <br>
+		</p>
+	</div>
+	<hr/>
+	<div class="div">
+		<h4>Ball projectile game</h4>
+		<a href="http://ananddevan.github.io/DroppingBall/"><img src="assets/images/droppingBall.jpg" alt="Dropping ball game"></a><br/>
+		<p>Play by dropping the ball from a height to hit target<br>
+			WebGL may not work on ipad, andriod phones (Play on a desktop with chrome)
+		Libraries, technology: 
+		<br/><br/><br>
+		<b>Libraries, technology</b>: <br>
+		+ <em>webgl (three.js), simple gaming engine, javascript</em> <br>
+		+ use three.js library to create game graphics
+		+ developed a custom game engine to move ball accounting for sliding, contact, gravity<br>
+		+ use html audio to play sound for ball impact
+
+		</p>
+	</div>
 
 </body>
 </html>
