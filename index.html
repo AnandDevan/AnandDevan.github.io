@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html>
 <style>
-   .center img {
-    margin: 0 1em 1em 0em;
-    float: left;
-  }
-  .center{
-  	margin-left: auto;
-    margin-right: auto;
-  }
-  .clearfix {
-  overflow: auto;
-}
-body{
-font: 16px Arial, sans-serif;
-max-width: 800px;
-}
+	.gamePicture {
+		margin: 0 1em 1em 0em;
+		float: left;
+	}
+	.center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+  	.clearfix {
+  		overflow: auto;
+	}
+	body{
+		font: 12px Helvetica, sans-serif;
+		max-width: 800px;
+	}
+	.projectTitle {
+		background: lightgreen;
+		padding:10px;
+		border-radius: 5px;
+	}
+	.floatRight {
+		float: right;
+	}
 </style>
 <body class="center">
-<h4>Tile based jigsaw puzzle</h4>
+<h4 class="projectTitle">Tile based jigsaw puzzle</h4>
 	<div class="center clearfix">
-		<a href="http://ananddevan.github.io/JigsawPuzzle/"> <img src="assets/images/jigsawPuzzle.jpg" alt="Tiled jigsaw puzzle"></a>
+		<a href="http://ananddevan.github.io/JigsawPuzzle/"> <img src="assets/images/jigsawPuzzle.jpg" alt="Tiled jigsaw puzzle" class="gamePicture"></a>
 		<p>Play game by rearranging the tiles to form the original image. You can even load your own image to create a custom puzzle.
 		<br/><br/><br>
-		<b>Libraries, technology</b>: <br>
-		+ <em>html5 canvas, audio, javascript</em> <br>
+		<span><b>Libraries, technology</b>:</span> <br>
+		+ <em>HTML5 canvas, audio, JavaScript</em> <br>
 		+ using html canvas drawImage to create tiles <br>
 		+ radomize tile order to create puzzle <br>
 		+ capture mouse, touch events to drag and place tiles <br>
 		+ add html audio to confirm tile placement <br>
-		+ use html input to load user images <br>
+		+ use html input to load user images <br><br>
+		<span>Demo: <a href="http://youtu.be/rpQZX4gtHyQ"> <img src='assets/images/youTubeIcon.png' style=" vertical-align: middle;"></a></span>
 		</p>
 	</div>
-	<hr/>
 	<div class="center clearfix">
-		<h4>Ball projectile game</h4>
-		<a href="http://ananddevan.github.io/DroppingBall/"><img src="assets/images/droppingBall.jpg" alt="Dropping ball game"></a><br/>
+		<h4 class="projectTitle">Ball projectile game</h4>
+		<a href="http://ananddevan.github.io/DroppingBall/"><img src="assets/images/droppingBall.jpg" alt="Dropping ball game" class="gamePicture"></a><br/>
 		<p>Play by dropping the ball from a height to hit target<br>
 			WebGL will not work on ipad, some andriod phones (desktop, chrome should work)
 		<br/><br/><br>
 		<b>Libraries, technology</b>: <br>
-		+ <em>webgl (three.js), custom gaming engine, javascript</em> <br>
+		+ <em>webgl (three.js), custom gaming engine, JavaScript</em> <br>
 		+ use three.js library to create game graphics <br>
 		+ developed a custom game engine to move ball accounting for sliding, contact, gravity<br>
-		+ use html audio to play sound for ball impact
+		+ use html audio to play sound for ball impact<br/>
 		</p>
 	</div>
 </body>
