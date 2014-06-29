@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.gamePicture {
+		margin: 0 1em 1em 0em;
+		float: left;
+	}
+	.center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+  	.clearfix {
+  		overflow: auto;
+	}
+	body{
+		font: 12px Helvetica, sans-serif;
+		max-width: 900px;
+	}
+	.projectTitle {
+		background: lightgreen;
+		padding:10px;
+		border-radius: 5px;
+	}
+	.floatRight {
+		float: right;
+	}
+	.taskTitle {
+		color : orange;
+		font-size: 20px;
+		font-family: Arial;
+		font-weight: normal;
+		margin:0px;
+	}
+</style>
+<body class="center">
+<h4 class="projectTitle">Tile based jigsaw puzzle</h4>
+	<div class="center clearfix">
+		The aim of the project is to create an online version of classic jigsaw puzzle game. To make it simple it was decided that the puzzle will be formed from rectangular tiles. It was aimed to make this work on mobile devices and allow the user to form a puzzle from pictures on their devices or by taking a new picture.
+		<br/><br/> <br/>
+		<h4 class = "taskTitle"> Puzzle organization </h4>
+		<p> 
+			We use HTML5 canvas element to present a puzzle picture and a solution picture. A set of about 20 images is used for the game as seed data and a random image is picked each time the game is played 
+		</p>
+		<h4 class = "taskTitle"> Forming tiles (jigsaw pieces) for puzzle </h4>
+		<p> 
+			HTML5 canvas drawImage is extermely flexible, it supports drawing a sub-region a picture on to a sub-region of the canvas. Once we determine a tile size (3x3 grid for now) we can draw out the puzzle by selecting subregions of the image and drawing it out to the puzzle canvas. For generating the puzzle we use the  <a href="http://www.google.com/search?q=fisher+yates+algorithm"> fisher-yates shuffle </a> to randomize the puzzle tiles
+		</p>
+		<h4 class = "taskTitle"> Drag and drop tiles to play </h4>
+		<p> 
+			We track the mousedown events to find out which tile has been selected. With every mousemove we draw move the tile and on mouseup we swap out the dragged tile and the tile which is under the mouse. Since the interactions are simple mapping touch events on mobile devices to the mouse event equivalent works very well
+		</p>
+		<h4 class = "taskTitle"> User cues for swapping tiles </h4>
+		<p>
+			While dragging a tile we draw out the target tile in orange to give the player some idea of swapping. And on mouseup we play a sound to indicate the tiles were swapped
+		</p>
+		<h4 class = "taskTitle"> Refine layout </h4>
+		<p>
+			The idea is to make use of as much screen space as possible regardless of image size or device. It involved sizing the puzzle and solution canvases to occupy most of the page size and using css to center them both.
+		</p>
+		<h4 class = "taskTitle"> Obtain image and sound assets </h4>
+		<p>
+			There are internet sites that make available images and sound assets royalty free. I use the following websites:
+			<a href="http://flickr.com">flickr</a>, 
+			<a href="http://openphoto.net">openphoto</a>, 
+			<a href="http://morguefile.com/archive"> morguefile </a>, 
+			<a href="http://freesound.org"> freesound </a>
+			. I am thankful for these resources that improve the game experience
+		</p>
+		<h4 class = "taskTitle"> Loading user pictures </h4>
+		<p>
+			HTML5 input tag supports loading user files and on mobile devices this also make use of the camera to take a picture and create a new file
+		</p>
+	</div>
+	<div> 
+	</div>
+</body>
+</html>
