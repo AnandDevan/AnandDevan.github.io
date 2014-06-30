@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html>
 <style>
-	.gamePicture {
-		margin: 0 1em 1em 0em;
-		float: left;
-	}
 	.center {
 		margin-left: auto;
 		margin-right: auto;
 	}
-  	.clearfix {
-  		overflow: auto;
-	}
 	body{
 		font: 12px Helvetica, sans-serif;
-		max-width: 900px;
+		max-width: 800px;
 	}
 	.projectTitle {
 		background: lightgreen;
-		padding:10px;
+		padding:5px;
 		border-radius: 5px;
-	}
-	.floatRight {
-		float: right;
 	}
 	.taskTitle {
 		color : orange;
-		font-size: 20px;
+		font-size: 1.5em;
 		font-family: Arial;
 		font-weight: normal;
 		margin:0px;
 	}
+	.taskParaStyle {
+		margin-top: 0em;
+		margin-bottom: 1.5em;
+	}
+	.projectDescription {
+		font-size: 1.25em;
+		margin-bottom: 2em;
+	}
+
 </style>
 <body class="center">
-<h4 class="projectTitle">Tile based jigsaw puzzle</h4>
+<h2 class="projectTitle">Tile based jigsaw puzzle</h4>
 	<div class="center clearfix">
-		The aim of the project is to create an online version of classic jigsaw puzzle game. To make it simple it was decided that the puzzle will be formed from rectangular tiles. It was aimed to make this work on mobile devices and allow the user to form a puzzle from pictures on their devices or by taking a new picture.
-		<br/><br/> <br/>
-		<h4 class = "taskTitle"> Puzzle organization </h4>
-		<p> 
-			We use HTML5 canvas element to present a puzzle picture and a solution picture. A set of about 20 images is used for the game as seed data and a random image is picked each time the game is played 
+		<p class="projectDescription">
+			The aim of the project is to create a version of the classic jigsaw puzzle game playable online. To make it simple it was decided that the puzzle will be formed using rectangular tiles. It should work on mobile devices and allow the user to form a puzzle from pictures on their devices or by shooting a new picture.
 		</p>
-		<h4 class = "taskTitle"> Forming tiles (jigsaw pieces) for puzzle </h4>
-		<p> 
-			HTML5 canvas drawImage is extermely flexible, it supports drawing a sub-region a picture on to a sub-region of the canvas. Once we determine a tile size (3x3 grid for now) we can draw out the puzzle by selecting subregions of the image and drawing it out to the puzzle canvas. For generating the puzzle we use the  <a href="http://www.google.com/search?q=fisher+yates+algorithm"> fisher-yates shuffle </a> to randomize the puzzle tiles
+		<h4 class = "taskTitle"> Puzzle board organization </h4>
+		<p class = "taskParaStyle" >
+			HTML5 canvas element is used to present a puzzle picture and a solution picture. A set of about 20 preset images is used for the game as seed and a random image is picked each time the game is played 
+		</p>
+		<h4 class = "taskTitle"> Forming jigsaw pieces/tiles for puzzle </h4>
+		<p class = "taskParaStyle" > 
+			HTML5 canvas drawImage is extermely flexible, it supports drawing a sub-region of a picture on to a sub-region of the canvas. Once we determine a tile size (the source picture is divided into 3 tile x 3 tile grid for now) we can draw out the puzzle by selecting subregions of the image and drawing it out to the puzzle canvas. For generating the puzzle we use the  <a href="http://www.google.com/search?q=fisher+yates+algorithm"> fisher-yates shuffle </a> to randomize the tiles
 		</p>
 		<h4 class = "taskTitle"> Drag and drop tiles to play </h4>
-		<p> 
-			We track the mousedown events to find out which tile has been selected. With every mousemove we draw move the tile and on mouseup we swap out the dragged tile and the tile which is under the mouse. Since the interactions are simple mapping touch events on mobile devices to the mouse event equivalent works very well
+		<p class = "taskParaStyle" >
+			We track the mousedown event to find out which tile has been selected. With every mousemove subsequently we draw the dragged tile at the current mouse location. On mouseup we swap the dragged tile and the tile under the mouse. Since the interactions are simple mapping touch events on mobile devices to the mouse event equivalent worked well with minminal effort
 		</p>
 		<h4 class = "taskTitle"> User cues for swapping tiles </h4>
-		<p>
-			While dragging a tile we draw out the target tile in orange to give the player some idea of swapping. And on mouseup we play a sound to indicate the tiles were swapped
+		<p class = "taskParaStyle" >
+			While dragging a tile we draw out the target tile in orange to give the player some idea of swapping that may happen. On mouseup we play a sound to indicate the tiles were swapped
+		</p>
+		<h4 class = "taskTitle"> Determining game completion </h4>
+		<p class = "taskParaStyle" >
+			All the tiles remember their correct location and current location as row, column grid coordinates. Each time the user swaps tiles, if the current location matches the correct location for each of the tiles then the user has compelted the puzzle. A replay button is presented which will load in the next picture  
 		</p>
 		<h4 class = "taskTitle"> Refine layout </h4>
-		<p>
-			The idea is to make use of as much screen space as possible regardless of image size or device. It involved sizing the puzzle and solution canvases to occupy most of the page size and using css to center them both.
+		<p class = "taskParaStyle" >
+			The idea is to make use of as much screen space as possible regardless of picture size or screen size. It involved sizing the puzzle and solution canvases to occupy most of the page size and using css to center them both.
 		</p>
 		<h4 class = "taskTitle"> Obtain image and sound assets </h4>
-		<p>
-			There are internet sites that make available images and sound assets royalty free. I use the following websites:
+		<p class = "taskParaStyle" >
+			There are several resources online that make available images and sound assets royalty free. I used the following websites:
 			<a href="http://flickr.com">flickr</a>, 
 			<a href="http://openphoto.net">openphoto</a>, 
 			<a href="http://morguefile.com/archive"> morguefile </a>, 
@@ -67,8 +71,8 @@
 			. I am thankful for these resources that improve the game experience
 		</p>
 		<h4 class = "taskTitle"> Loading user pictures </h4>
-		<p>
-			HTML5 input tag supports loading user files and on mobile devices this also make use of the camera to take a picture and create a new file
+		<p class = "taskParaStyle" >
+			HTML5 input tag supports loading user files and on mobile devices this also make use of the camera to take a picture and create a new file. This did not require any additional work to implement
 		</p>
 	</div>
 	<div> 
